@@ -1,0 +1,86 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+   <div class="row home_header">
+       <div class="col col-md-4">
+           <h1 class="h3 mb-0 mr-auto text-left text-gray-800">
+               <mat-icon style="font-size: 26px; top: 0px"> view_list</mat-icon> PNR List
+           </h1>
+       </div>
+       <div class="home_button col-md-8 col-sm-12 d-flex justify-content-end">
+           <div class="justify-content-end">
+               <a routerLink="add_new_pnr" class="btn btn-sm btn-green shadow-sm mb-2">
+                   <mat-icon>add_circle_outline</mat-icon> Add New PNR
+               </a>
+               <!-- <button (click)="openDialog()" class="btn btn-sm btn-green1 shadow-sm mb-2">
+                   <mat-icon>add_circle_outline</mat-icon> Update Inventory By Inventory code 
+               </button> -->
+               <a href="#" class="btn btn-sm btn-grey shadow-sm mb-2">
+                   <mat-icon>check_circle_outline</mat-icon> Total Record (0)
+               </a>
+           </div>
+       </div>
+   </div>
+   <hr>
+   <form>
+       <div class="row mt-4">
+           <div class="col">
+               <mat-form-field appearance="fill">
+                   <mat-label>Start From</mat-label>
+                   <mat-select>
+                       <mat-option value="Mumbai,(BOM)">Mumbai,(BOM)</mat-option>
+                   </mat-select>
+               </mat-form-field>
+           </div>
+           <div class="col">
+               <mat-form-field appearance="fill">
+                   <mat-label>Select To</mat-label>
+                   <mat-select>
+                       <mat-option value="Chandigarh,(IXC)">Chandigarh,(IXC)</mat-option>
+                       <mat-option value="New Delhi,(DEL)">New Delhi,(DEL)</mat-option>
+                   </mat-select>
+               </mat-form-field>
+           </div>
+           <div class="col">
+               <mat-form-field appearance="fill">
+                   <mat-label>Travel Start Date</mat-label>
+                   <input matInput [matDatepicker]="picker1">
+                   <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                   <mat-datepicker #picker1></mat-datepicker>
+               </mat-form-field>
+           </div>
+           <div class="col">
+               <mat-form-field appearance="fill">
+                   <mat-label>Travel End Date</mat-label>
+                   <input matInput [matDatepicker]="picker2">
+                   <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                   <mat-datepicker #picker2></mat-datepicker>
+               </mat-form-field>
+           </div>
+       </div>
+       <div class="row">
+           <div class="col">
+               <mat-form-field class="example-full-width" appearance="fill">
+                   <mat-label>Pnr..</mat-label>
+                   <input matInput>
+               </mat-form-field>
+           </div>
+           <div class="col">
+               <mat-form-field class="example-full-width" appearance="fill">
+                   <mat-label>Airline</mat-label>
+                   <input matInput>
+               </mat-form-field>
+           </div>
+           <div class="col">
+               <mat-form-field class="example-full-width" appearance="fill">
+                   <mat-label>Flight No.</mat-label>
+                   <input matInput>
+               </mat-form-field>
+           </div>
+           <div class="col" style="position: relative; bottom: 10px">
+               <button mat-flat-button color="primary">Search</button>
+           </div>
+       </div>
+   </form>
+</div>
+<!-- /.container-fluid -->

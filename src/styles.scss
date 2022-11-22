@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* You can add global styles to this file, and also import other style files */
+
+// colors
+:root {
+   --nav_bg: #f7f7f7;
+   --link_green: #62a025;
+   --footer_bg: #ececec;
+   --border_color: #d9d9d9;
+   --heading_grey: #324253;
+   --heading_grey2: #616161;
+   --para_grey: #666666;
+   --para_light_grey: #999999;
+   --black: #000000;
+   --white: #ffffff;
+   --red: #ff1228;
+   --link_blue: #337ab7;
+}
+
+
+html,
+body {
+   height: 100%;
+}
+
+body {
+   margin: 0;
+   font-family: 'Quicksand', sans-serif;
+   background: #fafafa;
+}
+
+.btn:focus-visible{
+   --bs-btn-focus-box-shadow: none !important;
+   background-color: none !important;
+}
+
+
+
+.pages_text_section {
+   padding: 20px 20px;
+   font-size: 13px;
+   line-height: 1.42857143;
+
+   h5 {
+      font-size: 18px;
+      color: var(--black);
+      letter-spacing: 0.33px;
+      font-weight: bold;
+   }
+
+   p {
+      word-wrap: break-word;
+      margin: 0 0 10px;
+   }
+}
+
+.mat-focused .mat-form-field-label{
+   color: var(--link_green) !important;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar{
+   background-color: var(--link_green) ;
+}
+
+
+@media only screen and (max-width: 599px){
+   .mat-tab-label {
+      min-width: 108px !important;
+   }
+ }

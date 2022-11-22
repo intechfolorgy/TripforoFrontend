@@ -1,0 +1,100 @@
+<div class="shadow_1">
+   <mat-toolbar class="mat-elevation-z8">
+     <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+       <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+       <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+     </button>
+     <button class="sidebarToggle" (click)="sidenav.toggle()">
+       <mat-icon> menu </mat-icon>
+     </button>
+ 
+     <div class="logo">
+       <img class="img-profile" src="assets/logo/logo.png">
+     </div>
+ 
+     <a class="example-spacer"></a>
+ 
+     <h5 class="mx-3">
+       <mat-icon style="font-size: 20px; position: relative; top: 6px; color: rgb(7, 187, 7);">account_balance</mat-icon>
+       Balance : &#8377; 11771
+     </h5>
+     <div class="dropdown">
+       <a mat-button [matMenuTriggerFor]="menu" (mouseenter)="openUserMenu()" id="toggleButton"
+         class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
+         aria-expanded="false">
+         <span id="profile_txt">Profile</span>
+         <img class="img-profile rounded-circle" src="assets/icons/profile.svg" />
+       </a>
+ 
+       <mat-menu class="dropdown_menu1" #menu="matMenu" overlapTrigger="false">
+         <ul class="dec1" (mouseleave)="closeUserMenu()">
+           <li>
+             <a routerLink="user_profile">
+               <mat-icon>person</mat-icon>
+               Profile
+             </a>
+           </li>
+           <mat-divider class="mt-2 mb-2"></mat-divider>
+           <li>
+             <button class="dropdown-item px-3" type="button">
+               <mat-icon>exit_to_app</mat-icon>
+               Logout
+             </button>
+           </li>
+         </ul>
+       </mat-menu>
+     </div>
+   </mat-toolbar>
+ </div>
+ 
+ <mat-sidenav-container>
+   <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+ 
+     <!-- <img
+       class="avatar mat-elevation-z8"
+       src="https://source.unsplash.com/c_GmwfHBDzk/200x200"  
+     /> -->
+     <a>
+       <button mat-button class="dash_txt">
+         <mat-icon> dashboard </mat-icon>
+         Dashboard
+       </button>
+     </a>
+ 
+     <mat-divider></mat-divider>
+ 
+     <p class="designation">FEATURES</p>
+ 
+     <mat-divider></mat-divider>
+     <a routerLink="supplier" class="menu-button active">
+       <button mat-button>
+         <mat-icon>flight</mat-icon>
+         Fixed Departures Records
+       </button>
+     </a>
+ 
+     <a routerLink="booking_report">
+       <button mat-button class="menu-button">
+         <mat-icon>library_books</mat-icon>
+         Booking Report
+       </button>
+     </a>
+ 
+     <a routerLink="ledger_report">
+       <button mat-button class="menu-button">
+         <mat-icon>library_books</mat-icon>
+         Ledger Report
+       </button>
+     </a>
+ 
+ 
+     
+ 
+   </mat-sidenav>
+   <!-- <app-dashboard></app-dashboard> -->
+   <div style="padding: 15px; background-color: white; height: 85vh;">
+     
+     <router-outlet></router-outlet>
+   </div>
+ 
+ </mat-sidenav-container>
